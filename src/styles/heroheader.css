@@ -1,0 +1,143 @@
+.herocontainer{
+    background-color: #161616;
+    height: 90vh;
+    padding-top: 90px;
+}
+.carasoul{
+    height: 500px;
+    background-color: #FFD770;
+    width: 1150px;
+    border-radius: 20px;
+    padding-top: 100px;
+    padding-left: 300px;
+    padding-right: 300px;
+    display: flex;
+    flex-direction: row;
+}
+.carasoul2{
+    background-image: url('../images/Unsplash1.jpg'); /* Replace 'your-image-url.jpg' with the URL or path to your image */
+    height: 500px;
+    background-color: #FFD770;
+    width: 1150px;
+    border-radius: 20px;
+    padding-top: 100px;
+    padding-left: 300px;
+    padding-right: 300px;
+    display: flex;
+    flex-direction: row;
+}
+.carasoul h3{
+    font-size: 30px;
+    padding-left: 20px;
+    padding-top: 50px;
+    color: #565656;
+}
+.carasoul p{
+    padding-left: 20px;
+    padding-top: 10px;
+    color: #565656;
+}
+.carasoul2 h3{
+    font-size: 30px;
+    padding-left: 20px;
+    padding-top: 50px;
+    color: #565656;
+}
+.carasoul2 p{
+    padding-left: 20px;
+    padding-top: 10px;
+    color: #565656;
+}
+.carasoul-container{
+    height: 500px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+}
+.btn{
+    width: 180px;
+    height: 50px;
+    cursor: pointer;
+    background-color: #000;
+    border-radius: 5px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn p{
+    color: white;
+    font-size: 15px;
+    padding: 0px;
+}
+.hero-mint{
+    display: flex;
+    flex-direction: row;
+}
+.hero-mint p{
+    padding-left: 10px;
+}
+.circle {
+        width: 8px; /* Adjust the width and height to your desired size */
+        height: 8px;
+        background-color: #34db66; /* Set the background color */
+        border-radius: 50%; /* Create a circular shape with border-radius */
+        margin-top: 15px; /* Adjust the top margin to center vertically */
+        margin-left: 20px;
+}
+.btn2{
+    width: 120px;
+    height: 50px;
+    cursor: pointer;
+    background-color: #000;
+    border-radius: 15px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn2 p{
+    color: white;
+    font-size: 15px;
+    padding: 0px;
+}
+.carasoul3{
+    background-image: url('../images/colors.jpg'); /* Replace 'your-image-url.jpg' with the URL or path to your image */
+    height: 500px;
+    background-color: #FFD770;
+    width: 1150px;
+    border-radius: 20px;
+    padding-top: 100px;
+    padding-left: 200px;
+    padding-right: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.carasoul3 h3{
+    font-size: 36px;
+    padding-left: 20px;
+    padding-top: 50px;
+    color: #FFF;
+}
+.carasoul3 p{
+    padding-left: 20px;
+    padding-top: 10px;
+    color: #FFF;
+}
+.btn-mintle{
+    width: 120px;
+    height: 50px;
+    cursor: pointer;
+    background-color: #FFF;
+    border-radius: 15px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-mintle p{
+    color: #000;
+    font-size: 15px;
+    padding: 0px;
+}

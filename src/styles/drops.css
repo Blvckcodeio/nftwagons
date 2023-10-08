@@ -1,0 +1,105 @@
+.drops-cont{
+    height: 500px;
+    border-color: white;
+    background-color: #161616;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drops{
+  width: 1150px;
+  height: 450px;
+  border-radius: 20px;
+  background-color: #161616; /* Specify the background color with opacity */
+  border: 1px solid white;
+}
+.drops{
+  display: flex;
+  padding-top: 30px;
+  padding-left: 30px;
+  flex-direction: column;
+}
+.drops h3{
+  color: #565656;
+  font-size: 30px;
+}
+.drop-navigate{
+  display: flex;
+  flex-direction: row;
+}
+.tab1{
+  padding-top: 10px;
+  padding-left: 10px;
+  color: #565656;
+  cursor:pointer ;
+
+}
+.tab1 active{
+  padding-top: 10px;
+  padding-left: 10px;
+  color: #fff;
+  cursor:pointer ;
+}
+.tab2{
+  padding-top: 10px;
+  padding-left: 10px;
+  color: #565656;
+  cursor:pointer ;
+}
+.tab2-active{
+  padding-top: 10px;
+  padding-left: 10px;
+  color: #fff;
+  cursor:pointer ;
+}
+.drop-card-container{
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  margin-left: 30px;
+}
+.drop-card{
+  position: relative;
+  border-radius: 20px;
+  border: 1px solid white;
+  width: 200px;
+  height: 300px;
+  padding-left: 8px;
+  padding-top: 8px;
+
+}
+.drop-img{
+  border-radius: 20px;
+}
+.drop-header{
+  display: flex;
+  flex-direction: row;
+}
+.user-circle{
+  position: absolute;
+  top: -30px;
+  right: 10px;
+}
+.drop-card span{
+  border-radius: 50%;
+}
+.title-card{
+  margin-top: 10px;
+  width: 180px;
+  height: 80px;
+  border-radius: 20px;
+  background-color: #EBFFDF;
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+}
+.minting h3{
+  font-size:15px;
+  padding-left: 10px;
+}
+.minting h4{
+  font-size:10px;
+  padding-left: 15px;
+  color: #565656;
+}

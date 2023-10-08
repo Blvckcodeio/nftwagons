@@ -1,0 +1,97 @@
+.navbar-cont{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: fixed; 
+    z-index: 9999;
+}
+.navbar-cont-scroll{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: fixed; 
+    z-index: 9999;
+    backdrop-filter: blur(15px); /* Adjust the blur radius as needed */
+
+}
+
+.navflex{
+    padding-left: 20px;
+    display: flex;
+    gap: 2rem;   
+}
+.navbar-cont input{
+    margin-left: 20px;
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+.scroll{
+    margin-left: 20px;
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+.navbar-cont input::placeholder {
+    text-indent: 10px; /* Adjust the value to move the placeholder left or right */
+}
+
+.navbar-cont  input:focus {
+    outline: none;
+}
+
+.nav-btn{
+    width: 120px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #FFF;
+    border-radius: 8px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto; /* Push the div to the right */
+}
+.nav-btn p{
+    color: #000;
+    font-size: 15px;
+    padding: 0px;
+}
+
+.logo-scroll{
+    color: #fff;
+}
+.navflex-scroll{
+    padding-left: 20px;
+    display: flex;
+    gap: 2rem;
+    color: #fff;
+
+}
+.nav-btn-scroll{
+    width: 120px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 20px;
+    display: flex;
+    color: #000;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto; /* Push the div to the right */
+}
