@@ -1,6 +1,6 @@
 # NFTWAGON - NFT Trading Marketplace
 
-![Project Image](./project-image.png)
+![Project Image](public/project-image.png)
 
 ## Overview
 
